@@ -22,7 +22,8 @@ async function employeeLoop (role) {
         Answers = await inquirer.prompt(internQuestions);
         newEmployee = new Intern(Answers.name, Answers.id, Answers.email, Answers.school);
     } else {
-        console.log("Something went wrong with this binary selection")
+        Answers = await inquirer.prompt(managerQuestions);
+        newEmployee = new Manager(Answers.name, Answers.id, Answers.email, Answers.officeNumber);
     }
 
     teamArray.push(newEmployee);
@@ -37,28 +38,4 @@ async function employeeLoop (role) {
     }
 }
 
-async function init () {
-    let Answers = await inquirer.prompt(managerQuestions);
-
-    // breakdown inquirer object
-    let manager = new Manager(Answers.name, Answers.id, Answers.email, Answers.officeNumber);
-
-    teamArray.push(manager);
-    console.log(teamArray);
-
-    let nextTeammate = Answers.nextTeammate;
-
-    if (nextTeammate === 'No More Teammates') {
-        console.log("generating your HTML!")
-    } else {
-        console.log("Starting Prompt for your new " + nextTeammate + "!")
-        employeeLoop(nextTeammate);
-    }
-};
-
-
-
-//console.log(teamArray);
-
-
-init();
+employeeLoop('manager');
