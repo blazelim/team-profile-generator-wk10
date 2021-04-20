@@ -9,7 +9,7 @@ test('creates an employee object', () => {
     expect(employee.email).toEqual(expect.any(String));
 });
 
-test("getName() returns 'this persons name is <name>'", () => {
+test("getName() returns string containing name", () => {
     const employee = new Employee('Dave', 12345, 'sample@email.com');
 
     expect(employee.getName()).toEqual(expect.stringContaining(employee.name))
