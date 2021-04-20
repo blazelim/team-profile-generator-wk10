@@ -3,6 +3,7 @@ const inquirer = require('inquirer');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
+const fs = require('fs');
 
 const managerQuestions = require('./src/managerQuestions');
 const engineerQuestions = require('./src/engineerQuestions');
@@ -14,7 +15,7 @@ async function employeeLoop (role) {
     let newEmployee = {};
     let Answers = {};
 
-    // change questions according to role input
+    // change questions according to role input, the "else" will only occur on initialization for the team manager
     if (role === 'Engineer') {
         Answers = await inquirer.prompt(engineerQuestions);
         newEmployee = new Engineer(Answers.name, Answers.id, Answers.email, Answers.github);
@@ -32,10 +33,12 @@ async function employeeLoop (role) {
     let nextTeammate = Answers.nextTeammate;
     if (nextTeammate === 'No More Teammates') {
         console.log("generating your HTML!")
+
     } else {
         console.log("Starting Prompt for your new " + nextTeammate + "!")
         employeeLoop(nextTeammate);
     }
 }
 
-employeeLoop('manager');
+// initialize javascript
+employeeLoop('Manager');
