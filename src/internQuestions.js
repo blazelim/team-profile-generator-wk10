@@ -47,7 +47,7 @@ var questionsForIntern = [
         name: 'school',
         message: "Enter your intern's school name",
         validate: schoolName => {
-            if (parseInt(schoolName)) {
+            if (schoolName) {
                 return true;
             } else {
                 console.log(".     Please enter your intern's school name!");
