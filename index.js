@@ -1,16 +1,24 @@
 // import the required modules
 const inquirer = require('inquirer');
+const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
-const Manager = require('./lib/Manager');
 
-const managerQuestions = require('./src/managerQuestions')
+const managerQuestions = require('./src/managerQuestions');
+const engineerQuestions = require('./src/engineerQuestions');
+const internQuestions = require('./src/internQuestions');
 
 const teamArray = [];
 
-// async function employeeLoop (role) {
-
-// }
+async function employeeLoop (role) {
+    if (role === 'Engineer') {
+        let Answers = await inquirer.prompt(engineerQuestions);
+    } else if (role === 'Intern') {
+        let Answers = await inquirer.prompt(internQuestions);
+    } else {
+        console.log("Something went wrong with this binary selection")
+    }
+}
 
 async function init () {
     let Answers = await inquirer.prompt(managerQuestions);
