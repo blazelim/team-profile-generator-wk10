@@ -17,7 +17,7 @@ function templateGenerator (teamArray) {
             
           <div class="container">
                 <div class="row">`
-
+// for loop for each employee and if statements for their role cards
     for (var i = 0; i < teamArray.length; i++) {
         if (teamArray[i].role === 'Manager') {
             runningHTML += `<div class="card col-2 card-margins" style="width: 18rem;">

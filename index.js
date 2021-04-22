@@ -49,9 +49,11 @@ async function employeeLoop (role) {
     }
 
     teamArray.push(newEmployee);
-    // console.log(teamArray);
+
 
     let nextTeammate = Answers.nextTeammate;
+
+    // if statement for ending the application
     if (nextTeammate === 'No More Teammates') {
         console.log("generating your HTML!")
         let generatedTemplate = templateGenerator(teamArray);
@@ -63,6 +65,7 @@ async function employeeLoop (role) {
         console.log("README is generated in the dist folder!")
 
     } else {
+        // if statement for creating the next employee
         console.log("Starting Prompt for your new " + nextTeammate + "!")
         employeeLoop(nextTeammate);
     }
