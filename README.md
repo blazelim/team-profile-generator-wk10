@@ -19,7 +19,7 @@ Additional features of the Team Profile generator include:
 * [Questions](#questions)
 
 ## Video Walkthrough for Installation and Usage
-
+https://drive.google.com/file/d/1hkLGtlBEeO1qz-syZ74DH2rk6zDMAyhs/view?usp=sharing
 
 ## Installation
 ![Download the Code](./media/downloadproject.png)
