@@ -11,7 +11,7 @@ const cssGenerator = require('./src/cssGen');
 const managerQuestions = require('./src/managerQuestions');
 const engineerQuestions = require('./src/engineerQuestions');
 const internQuestions = require('./src/internQuestions');
-const cssGenerator = require('./src/cssGen');
+
 
 const teamArray = [];
 
@@ -49,7 +49,7 @@ async function employeeLoop (role) {
     }
 
     teamArray.push(newEmployee);
-    console.log(teamArray);
+    // console.log(teamArray);
 
     let nextTeammate = Answers.nextTeammate;
     if (nextTeammate === 'No More Teammates') {
