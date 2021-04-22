@@ -5,11 +5,13 @@ const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const fs = require('fs');
 const fsPromises = fs.promises;
-const templateGenerator = require('./src/templateGenerator')
+const templateGenerator = require('./src/templateGenerator');
+const cssGenerator = require('./src/cssGen');
 
 const managerQuestions = require('./src/managerQuestions');
 const engineerQuestions = require('./src/engineerQuestions');
 const internQuestions = require('./src/internQuestions');
+const cssGenerator = require('./src/cssGen');
 
 const teamArray = [];
 
@@ -55,6 +57,9 @@ async function employeeLoop (role) {
         let generatedTemplate = templateGenerator(teamArray);
 
         writeToFile('./dist/index.html', generatedTemplate);
+
+        let generatedcss = cssGenerator();
+        writeToFile('./dist/style.css', generatedcss);
         console.log("README is generated in the dist folder!")
 
     } else {
