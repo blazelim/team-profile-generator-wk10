@@ -11,11 +11,15 @@ Additional features of the Team Profile generator include:
 * Listing out additional information such as office number for managers and the school for the interns.
 
 ## Table of Contents
+* [Video Walkthrough for Installation and Usage](#video-walkthrough-for-installation-and-usage)
 * [Installation](#installation)
 * [Usage](#usage)
 * [Test](#test)
 * [License](#license)
 * [Questions](#questions)
+
+## Video Walkthrough for Installation and Usage
+
 
 ## Installation
 ![Download the Code](./media/downloadproject.png)
